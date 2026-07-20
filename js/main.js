@@ -145,3 +145,99 @@ if (certModal) {
     modalTitle.textContent = "Request: " + certName;
   });
 }
+
+=======
+
+// ================= HERO IMAGE + VIDEO CAROUSEL =================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const carouselEl = document.getElementById("header-carousel");
+
+    if (!carouselEl) return;
+
+    const carousel = new bootstrap.Carousel(carouselEl, {
+        interval: false,
+        ride: false,
+        wrap: true,
+        touch: true
+    });
+
+    let timer = null;
+
+    function playCurrentSlide() {
+
+        clearTimeout(timer);
+
+        // Stop all videos
+        document.querySelectorAll("#header-carousel video").forEach(v => {
+            v.pause();
+            v.currentTime = 0;
+        });
+
+        const active = carouselEl.querySelector(".carousel-item.active");
+
+        if (!active) return;
+
+        const type = active.dataset.type;
+
+        if (type === "image") {
+
+            timer = setTimeout(() => {
+                carousel.next();
+            }, 2000);
+
+        } else {
+
+            const video = active.querySelector("video");
+
+            if (!video) return;
+
+            video.play();
+
+            video.onended = function () {
+                carousel.next();
+            };
+
+        }
+
+    }
+
+    playCurrentSlide();
+
+    carouselEl.addEventListener("slid.bs.carousel", playCurrentSlide);
+
+});
+
+
+// ================= ANIMATE HERO TEXT ONLY ONCE =================
+
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        const firstSlide = document.querySelector("#header-carousel .carousel-item.active");
+console.log(firstSlide);
+        if (!firstSlide) return;
+
+        const heading = firstSlide.querySelector("h5");
+        const title = firstSlide.querySelector("h1");
+        const buttons = firstSlide.querySelectorAll("a");
+
+        if (heading)
+           heading.classList.add("animate__animated", "animate__slideInDown");
+        if (title)
+            title.classList.add("animate__animated", "animate__zoomIn");
+
+
+        if (buttons[0])
+            buttons[0].classList.add("animate__animated", "animate__slideInLeft");
+
+        if (buttons[1])
+            
+buttons[1].classList.add("animate__animated", "animate__slideInRight");
+
+    }, 2500); // same duration as intro video
+
+});
+

@@ -587,3 +587,62 @@ h6,
     margin-bottom: -75px;
   }
 }
+
+/* Intro Video */
+
+#intro-video{
+    position: fixed;
+    inset: 0;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    transition:opacity .5s ease;
+}
+
+#intro-video video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#intro-video.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+
+/* ================= HERO IMAGE + VIDEO ================= */
+
+#header-carousel .carousel-item{
+    height:100vh;
+}
+
+#header-carousel .carousel-item img,
+#header-carousel .carousel-item video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#header-carousel .carousel-caption{
+    z-index:2;
+}
+
+.hero-video{
+    display:block;
+    background:#000;
+}
+
+@media (max-width:768px){
+
+    #header-carousel .carousel-item{
+        height:70vh;
+    }
+
+}
+
+h1[data-toggle="counter-up"]::after {
+    content: "+";
+}
