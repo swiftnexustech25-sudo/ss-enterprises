@@ -185,7 +185,7 @@
                     </div>
                     <h5 class="mb-2">GST Certificate</h5>
                     <p class="small text-muted flex-grow-1">Sample certificate description.</p>
-                    <a href="#" class="btn btn-primary btn-sm mt-auto py-2">Request Certificate</a>
+                    <button class="btn btn-primary btn-sm mt-auto py-2" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="GST Certificate">Request Certificate</button>
                 </div>
             </div>
 
@@ -197,7 +197,7 @@
                     </div>
                     <h5 class="mb-2">MSME Certificate</h5>
                     <p class="small text-muted flex-grow-1">Sample certificate description.</p>
-                    <a href="#" class="btn btn-primary btn-sm mt-auto py-2">Request Certificate</a>
+                    <button class="btn btn-primary btn-sm mt-auto py-2" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="MSME Certificate">Request Certificate</button>
                 </div>
             </div>
 
@@ -209,7 +209,7 @@
                     </div>
                     <h5 class="mb-2">APEDA Certificate</h5>
                     <p class="small text-muted flex-grow-1">Sample certificate description.</p>
-                    <a href="#" class="btn btn-primary btn-sm mt-auto py-2">Request Certificate</a>
+                    <button class="btn btn-primary btn-sm mt-auto py-2" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="APEDA Certificate">Request Certificate</button>
                 </div>
             </div>
 
@@ -221,7 +221,7 @@
                     </div>
                     <h5 class="mb-2">Foreign Trade Certificate</h5>
                     <p class="small text-muted flex-grow-1">Sample certificate description.</p>
-                    <a href="#" class="btn btn-primary btn-sm mt-auto py-2">Request Certificate</a>
+                    <button class="btn btn-primary btn-sm mt-auto py-2" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="Foreign Trade Certificate">Request Certificate</button>
                 </div>
             </div>
 
@@ -233,7 +233,7 @@
                     </div>
                     <h5 class="mb-2">IEC Code Certificate</h5>
                     <p class="small text-muted flex-grow-1">Sample certificate description.</p>
-                    <a href="#" class="btn btn-primary btn-sm mt-auto py-2">Request Certificate</a>
+                    <button class="btn btn-primary btn-sm mt-auto py-2" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="IEC Code Certificate">Request Certificate</button>
                 </div>
             </div>
 
@@ -245,18 +245,44 @@
                     </div>
                     <h5 class="mb-2">PAN Card Certificate</h5>
                     <p class="small text-muted flex-grow-1">Sample certificate description.</p>
-                    <a href="#" class="btn btn-primary btn-sm mt-auto py-2">Request Certificate</a>
+                    <button class="btn btn-primary btn-sm mt-auto py-2" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="PAN Card Certificate">Request Certificate</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- Request All Button (Changed to Blue) -->
+        <!-- Request All Button -->
         <div class="text-center mt-5">
-            <a href="#" class="btn btn-primary py-3 px-5">Request All Certificates</a>
+            <button class="btn btn-primary py-3 px-5" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-name="All Certificates">Request All Certificates</button>
         </div>
     </div>
 </div>
+
+<!-- Certificate Request Modal Popup -->
+<div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h5 class="modal-title fw-bold" id="certModalLabel">Request: Certificate</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-4">
+                <form>
+                    <p class="text-muted small mb-3">Enter your email to receive the certificate as an attachment.</p>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="you@domain.com" style="height: 45px;" required>
+                    </div>
+                   <div class="d-flex justify-content-end gap-2 pt-2">
+                     <button type="button" class="btn btn-info text-white px-4" data-bs-dismiss="modal">Cancel</button>
+                     <button type="submit" class="btn text-white px-4" style="background-color: #0b1d3a;">Send Certificate</button>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Styling and Script -->
 <style>
     .cert-img-container {
         height: 160px;
@@ -272,6 +298,8 @@
         object-fit: contain;
     }
 </style>
+
+
      <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light mt-5 wow fadeInUp"

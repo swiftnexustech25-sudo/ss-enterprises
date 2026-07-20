@@ -134,3 +134,14 @@ $(".service-carousel").owlCarousel({
     992: { items: 4 },
   },
 });
+
+// Dynamically update the modal title based on which card button was clicked
+const certModal = document.getElementById("certModal");
+if (certModal) {
+  certModal.addEventListener("show.bs.modal", function (event) {
+    const button = event.relatedTarget;
+    const certName = button.getAttribute("data-cert-name");
+    const modalTitle = certModal.querySelector(".modal-title");
+    modalTitle.textContent = "Request: " + certName;
+  });
+}
