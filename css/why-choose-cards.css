@@ -1,0 +1,354 @@
+/* ==========================================
+   WHY CHOOSE US - STACK CARDS
+========================================== */
+
+.why-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     min-height:360px;
+    padding:10px 0;
+     
+}
+
+.stack-container{
+    position: relative;
+    width: 980px;
+    height: 320px;
+    margin: auto;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.stack-card {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background-size: cover;
+    background-position: center;
+     backdrop-filter: blur(12px);
+
+    border:2px solid rgba(255,255,255,.18);
+
+    transition:
+    left .7s cubic-bezier(.22,.61,.36,1),
+    top .7s cubic-bezier(.22,.61,.36,1),
+    transform .7s cubic-bezier(.22,.61,.36,1),
+    box-shadow .35s ease;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.20);
+
+}
+
+/* ==========================
+   BACKGROUND IMAGES
+========================== */
+
+.card1{
+    background: url("../img/GlobalPartner01.png") center/cover;
+}
+
+.card2{
+    background: url("../img/ExpertCompliance.png") center/cover;
+}
+
+.card3{
+    background: url("../img/Realtime.png") center/cover;
+}
+
+.card4{
+    background: url("../img/CustomizedLogistics.png") center/cover;
+}
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.stack-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background: Transparent;
+
+    transition:.45s;
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.stack-content{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:5;
+
+    padding:25px;
+
+}
+
+.stack-content h3{
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+    text-shadow:0 5px 15px rgba(0,0,0,.5);
+
+}
+
+/* ==========================
+   STACK POSITION
+========================== */
+
+.card1{
+
+    left:120px;
+
+    top:25px;
+
+    transform:
+        rotate(-14deg);
+
+    z-index:1;
+
+}
+
+.card2{
+
+    left:230px;
+
+    top:15px;
+
+    transform:
+        rotate(-5deg);
+
+    z-index:2;
+
+}
+
+.card3{
+
+    left:340px;
+
+    top:15px;
+
+    transform:
+        rotate(5deg);
+
+    z-index:3;
+
+}
+
+.card4{
+
+    left:450px;
+
+    top:25px;
+
+    transform:
+        rotate(14deg);
+
+    z-index:4;
+
+}
+
+/* ==========================================
+   SPREAD ANIMATION
+========================================== */
+
+.stack-container:hover .card1{
+    left:0;
+    top:30px;
+    transform:rotate(0deg);
+}
+
+.stack-container:hover .card2{
+    left:220px;
+    top:30px;
+    transform:rotate(0deg);
+}
+
+.stack-container:hover .card3{
+    left:440px;
+    top:30px;
+    transform:rotate(0deg);
+}
+
+.stack-container:hover .card4{
+    left:660px;
+    top:30px;
+    transform:rotate(0deg);
+}
+
+.stack-container:hover .stack-card{
+    z-index:10;
+}
+
+
+/* CArd Hover Animation */
+.stack-container:hover .card1{
+
+    transform:
+        translateX(-260px)
+        rotate(0);
+
+}
+
+.stack-container:hover .card2{
+
+    transform:
+        translateX(-90px)
+        rotate(0);
+
+}
+
+.stack-container:hover .card3{
+
+    transform:
+        translateX(90px)
+        rotate(0);
+
+}
+
+.stack-container:hover .card4{
+
+    transform:
+        translateX(260px)
+        rotate(0);
+
+}
+
+
+/* Stack Button */
+.stack-content .btn-uiverse{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:.45s;
+
+    margin-top:22px;
+
+}
+
+.stack-card:hover .btn-uiverse{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* Tablet (2 × 2 Layout) */
+@media (max-width:991px){
+
+.stack-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    justify-items:center;
+
+    height:auto;
+
+}
+
+.stack-card{
+
+    position:relative !important;
+
+    transform:none !important;
+
+    width:100%;
+    max-width:320px;
+
+}
+
+}
+
+
+/* Mobile (Vertical) */
+@media (max-width:767px){
+
+@media (max-width:767px){
+
+.stack-container{
+
+    width:100%;
+    max-width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    height:auto;
+
+    padding:0 15px;
+
+}
+
+.stack-card{
+
+    position:relative !important;
+
+    left:auto !important;
+    top:auto !important;
+
+    transform:none !important;
+
+    width:100%;
+    max-width:340px;
+
+    height:auto;
+    aspect-ratio:3/4;
+
+    margin-bottom:20px;
+
+}
+
+}
+
+
+@media (max-width:991px){
+
+.stack-container:hover .card1,
+.stack-container:hover .card2,
+.stack-container:hover .card3,
+.stack-container:hover .card4{
+
+    transform:none !important;
+
+}
+
+}}

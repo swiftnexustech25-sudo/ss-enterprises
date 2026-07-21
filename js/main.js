@@ -199,28 +199,68 @@ document.addEventListener("DOMContentLoaded", function () {
   carouselEl.addEventListener("slid.bs.carousel", playCurrentSlide);
 });
 
-// ================= ANIMATE HERO TEXT ONLY ONCE =================
 
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    const firstSlide = document.querySelector(
-      "#header-carousel .carousel-item.active",
-    );
-    console.log(firstSlide);
-    if (!firstSlide) return;
 
-    const heading = firstSlide.querySelector("h5");
-    const title = firstSlide.querySelector("h1");
-    const buttons = firstSlide.querySelectorAll("a");
+/* Mouse Cursor */
 
-    if (heading)
-      heading.classList.add("animate__animated", "animate__slideInDown");
-    if (title) title.classList.add("animate__animated", "animate__zoomIn");
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (buttons[0])
-      buttons[0].classList.add("animate__animated", "animate__slideInLeft");
+    const dot = document.querySelector(".cursor-dot");
+    const outline = document.querySelector(".cursor-outline");
 
-    if (buttons[1])
-      buttons[1].classList.add("animate__animated", "animate__slideInRight");
-  }, 2500); // same duration as intro video
+    if (!dot || !outline) {
+        console.log("Cursor not found");
+        return;
+    }
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
+
+    document.addEventListener("mousemove", function (e) {
+
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        dot.style.left = mouseX + "px";
+        dot.style.top = mouseY + "px";
+
+    });
+
+    function animateCursor() {
+
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+
+        outline.style.left = outlineX + "px";
+        outline.style.top = outlineY + "px";
+
+        requestAnimationFrame(animateCursor);
+
+    }
+
+    animateCursor();
+
+    document.querySelectorAll("a, button, .btn, .nav-link").forEach(item => {
+
+        item.addEventListener("mouseenter", function () {
+
+            outline.style.width = "50px";
+            outline.style.height = "50px";
+            outline.style.borderColor = "#091e3e";
+
+        });
+
+        item.addEventListener("mouseleave", function () {
+
+            outline.style.width = "30px";
+            outline.style.height = "30px";
+            outline.style.borderColor = "#091e3e";
+
+        });
+
+    });
+
 });
+
