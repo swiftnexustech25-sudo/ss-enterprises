@@ -1,0 +1,159 @@
+/*==================================================
+                OFFER STACK
+==================================================*/
+
+.offer-stack-section{
+    position: relative;
+    padding: 120px 0 500px;
+    background: #f7f9fc;
+    overflow: visible;
+}
+
+.offer-stack-heading{
+    width: min(850px,90%);
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.offer-stack-heading span{
+    display: inline-block;
+    color: #0D6EFD;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.offer-stack-heading h2{
+    font-size: 52px;
+    font-weight: 800;
+    color: #0d1b2a;
+    margin-bottom: 20px;
+}
+
+.offer-stack-heading p{
+    font-size: 18px;
+    line-height: 1.8;
+    color: #6c757d;
+}
+
+
+.stack-container{
+    width: min(1050px,90%);
+    margin: auto;
+     padding-bottom:0;
+}
+
+.stack-card-wrapper {
+    width: 100%;
+    perspective: 1000px;
+    margin-bottom: 60px;
+}
+
+.stack-card-wrapper:last-child {
+    margin-bottom: 0;
+}
+
+.stack-card{
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    width: 100%;
+    height: 380px;
+
+    padding:35px 40px;
+
+    /* margin-bottom: 80px; */
+
+    background: #fff;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.stack-image{
+
+    width:38%;
+    height:320px;
+
+    overflow:hidden;
+    border-radius:22px;
+
+}
+
+.stack-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.stack-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.stack-content{
+
+    width:58%;
+
+}
+
+.number{
+
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
+
+    background:#0D6EFD;
+
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+    font-size:20px;
+
+    margin-bottom:25px;
+
+}
+
+.stack-content h3{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#091E3E;
+
+    margin-bottom:20px;
+
+}
+
+.stack-content p{
+
+    color:#6c757d;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}

@@ -1660,3 +1660,10 @@ min-height: 450px;
     border-radius:16px;
 }
  */
+
+
+ .cursor-dot,
+.cursor-outline {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
