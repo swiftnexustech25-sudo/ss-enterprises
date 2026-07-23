@@ -4,7 +4,7 @@
 
 .offer-stack-section{
     position: relative;
-    padding: 120px 0 500px;
+    padding: 20px 0 500px;
     background: #f7f9fc;
     overflow: visible;
 }
@@ -18,15 +18,15 @@
 .offer-stack-heading span{
     display: inline-block;
     color: #0D6EFD;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 3px;
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 
 .offer-stack-heading h2{
-    font-size: 52px;
+    font-size: 30px;
     font-weight: 800;
     color: #0d1b2a;
     margin-bottom: 20px;
@@ -155,5 +155,132 @@
     font-size:18px;
 
     line-height:1.9;
+
+}
+
+/* =====================================
+        MOBILE RESPONSIVE
+======================================*/
+
+@media (max-width:768px){
+
+.offer-stack-section{
+    padding:60px 0 80px;
+}
+
+.offer-stack-heading{
+    width:92%;
+    margin-bottom:45px;
+}
+
+.offer-stack-heading span{
+    font-size:34px;
+    letter-spacing:2px;
+}
+
+.offer-stack-heading h2{
+    font-size:28px;
+}
+
+.offer-stack-heading p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.stack-container{
+    width:92%;
+}
+
+.stack-card{
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    gap:25px;
+
+    height:auto;
+
+    padding:25px;
+
+    border-radius:22px;
+
+}
+
+.stack-image{
+
+    width:100%;
+
+    height:220px;
+
+    border-radius:18px;
+
+}
+
+.stack-content{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.number{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:18px;
+
+    margin:0 auto 18px;
+
+}
+
+.stack-content h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.stack-content p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+}
+
+@media (max-width:768px){
+
+    .purpose-section{
+        margin-top:150px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .offer-stack-section{
+        padding-bottom:260px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .stack-card-wrapper{
+        margin-bottom:100px;
+    }
+
+    .stack-card-wrapper:last-child{
+        margin-bottom:300px;
+    }
 
 }

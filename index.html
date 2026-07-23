@@ -127,9 +127,15 @@
     <!-- Navbar & Carousel Start -->
     <div class="container-fluid position-relative p-0">
       <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5 py-3 py-lg-0">
-        <a href="index.html" class="navbar-brand p-0">
-          <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>SS Enterprises</h1>
-        </a>
+        <a href="index.html" class="navbar-brand logo-brand p-0">
+    <img src="img/SSEntp WO Logo.png"
+         alt="SS Enterprises Logo"
+         class="site-logo">
+
+    <span class="logo-text">
+        SS Enterprises
+    </span>
+</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -1453,24 +1459,24 @@
                 <div
                   class="link-animated d-flex flex-column justify-content-start"
                 >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="index.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="about.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>About
                     Us</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="services.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>
                     Services</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="certificate.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Certificate</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="quotation.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Quotation </a
                   >
-                  <a class="text-light" href="#"
+                  <a class="text-light" href="contact.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
                     Us</a
                   >
@@ -1580,6 +1586,19 @@ window.addEventListener("load", function () {
 
     const intro = document.getElementById("intro-video");
 
+    if (!intro) return;
+
+    // If intro has already played in this browser tab
+    if (sessionStorage.getItem("introPlayed")) {
+
+        intro.remove();
+        return;
+
+    }
+
+    // Save that intro has been played
+    sessionStorage.setItem("introPlayed", "true");
+
     setTimeout(function () {
 
         intro.classList.add("hide");
@@ -1591,14 +1610,14 @@ window.addEventListener("load", function () {
             // Animate hero after intro disappears
             const hero = document.querySelector(".carousel-item.active .hero-content");
 
-            if(hero){
+            if (hero) {
 
                 hero.style.transform = "scale(1.15)";
                 hero.style.opacity = "0";
 
                 requestAnimationFrame(() => {
 
-                    hero.style.transition = "all 1.0s ease";
+                    hero.style.transition = "all 1s ease";
                     hero.style.transform = "scale(1)";
                     hero.style.opacity = "1";
 
@@ -1606,13 +1625,13 @@ window.addEventListener("load", function () {
 
             }
 
-        },500);
+        }, 500);
 
-    },2500);
+    }, 2500);
 
 });
-</script>
 
+</script>
 
 <!-- Mouse Cursor -->
 <div class="cursor-dot"></div>
